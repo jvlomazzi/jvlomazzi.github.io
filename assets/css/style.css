@@ -15,3 +15,25 @@ body{
     border-radius: 50%;
     border: 6px solid rgba(3, 74, 168, .9);
 }
+.project-img{
+    width: 128px;
+    height: 128px;
+    margin-right: 12px;
+}
+.project-card{
+    display: flex;
+}
+.project-name{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+.project-version{
+    font-weight: 200;
+    font-size: 13px;
+    color: grey;
+}
+.project-description{
+    color: grey;
+    text-align: left
+}
