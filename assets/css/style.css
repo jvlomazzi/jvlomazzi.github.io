@@ -1,0 +1,17 @@
+body{
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+}
+.responsive-img{
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+#profile_picture{
+    width: 15em;
+    border-radius: 50%;
+    border: 6px solid rgba(3, 74, 168, .9);
+}
