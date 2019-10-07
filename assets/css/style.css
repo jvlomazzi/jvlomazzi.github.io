@@ -8,10 +8,17 @@ body{
     background: linear-gradient(80deg, rgba(152,79,6,1) 0%, rgba(106,20,128,1) 46%, rgba(10,194,243,1) 93%);
     color: #FFFFFF;
 }
+.switcher-container{
+    display: flex!important;
+    width: fit-content;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: 10px auto 10px auto;
+}
 .slider-button{
     display: flex;
-    width: 41px;
-    height: 20px;
+    width: 42px;
+    height: 23px;
     background-color: var(--opWhite);
     border-radius: 10px;
 }
@@ -21,12 +28,13 @@ body{
     margin: 0 0 0 2px;
 }
 .slider-button input[type="checkbox"]:checked + label{
-    right: -21px;
+    right: -18px;
     animation: switcherChecked;
     animation-duration: .5s;
     -webkit-animation: switcherChecked;
     -webkit-animation-duration: .5s;
 }
+
 .slider-button input[type="checkbox"]:not(:checked) + label{
     right: 0;
     animation: switcherNotChecked;
@@ -34,21 +42,25 @@ body{
     -webkit-animation: switcherNotChecked;
     -webkit-animation-duration: .5s;
 }
+.circle-switcher:before{
+    color: cornflowerblue;
+}
 .circle-switcher{ 
     position: relative;
     cursor: pointer;
     background-color: #FFFFFF;
-    width: 16px;
+    color: cornflowerblue;
+    width: 20px;
     margin: 2px 0;
     border-radius: 50%;
     float: left;
 }
 @keyframes switcherChecked{
     from{ right: 0 }
-    to{ right: -21px }
+    to{ right: -19px }
 }
 @keyframes switcherNotChecked{
-    from{ right: -21px }
+    from{ right: -19px }
     to{ right: 0 }
 }
 .responsive-img{
