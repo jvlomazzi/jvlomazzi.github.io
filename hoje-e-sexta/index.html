@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="João Victor Lomazzi">
+        <title>Hoje é sexta?</title>
+    </head>
+    <body>
+        <h1 id="corpo">{{info principal}}</h1>
+        <p id="corpo2"></p>
+        <style>
+            body{
+                text-align: center;
+            }
+        </style>
+        <script>
+            var diaSemana = [
+                'Domingo',
+                'Segunda',
+                'Terça',
+                'Quarta',
+                'Quinta',
+                'Sexta',
+                'Sábado'
+            ];
+            var data = new Date();
+            dia = data.getDay();
+            
+            if(diaSemana[dia] == 'Sexta'){
+                titulo = 'Hoje é sexta? SIM!';
+                corpo = 'HOJE É SEXTA FEIRAAAAAAAAAAAAA';
+                corpo2 = 'SEXTOOOOOOOOOOOOOOOOOOOO000O0O0O0O0OO0OUUUUUUUUUUUUUUUUUUU';
+            }else{
+                titulo = 'Hoje é sexta? NÃO!';
+                corpo = 'Infelizmente hoje é '+diaSemana[dia]+' :(';
+                corpo2 = 'volte aqui outro dia...';
+            }
+
+            document.title = titulo;
+            document.getElementById("corpo").innerHTML = corpo;
+            document.getElementById("corpo2").innerHTML = corpo2;
+        </script>
+    </body>
+</html>
