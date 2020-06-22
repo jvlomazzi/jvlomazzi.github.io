@@ -1,12 +1,14 @@
 :root{
     --opWhite: rgba(255, 255, 255, 0.3);
+    --opGrey: rgb(242, 242, 242);
+    --txtPrimary: rgb(57, 60, 68);
 }
 body{
     font-family: 'Muli', sans-serif;
     text-align: center;
-    background: rgb(152,79,6);
-    background: linear-gradient(80deg, rgba(152,79,6,1) 0%, rgba(106,20,128,1) 46%, rgba(10,194,243,1) 93%);
-    color: #FFFFFF;
+    background: rgb(255, 255, 255);
+    /* background: linear-gradient(80deg, rgba(152,79,6,1) 0%, rgba(106,20,128,1) 46%, rgba(10,194,243,1) 93%); */
+    color: var(--txtPrimary);
 }
 .switcher-container{
     display: flex!important;
@@ -96,7 +98,7 @@ body{
     flex-direction: column;
     width: 70%;
     margin: 30px auto;
-    color: #FFFFFF;
+    color: VAR(--txtPrimary);
 }
 .about-arrow{
     width: 0;
@@ -104,12 +106,12 @@ body{
     border-style: solid;
     border-width: 0 22.5px 30px 22.5px;
     margin: 0 auto;
-    border-color:  transparent transparent var(--opWhite) transparent;
+    border-color:  transparent transparent var(--opGrey) transparent;
 }
 .about-text-box{
     display: flex;
     flex-direction: column;
-    background-color: var(--opWhite);
+    background-color: var(--opGrey);
     padding: 10px;
     border-radius: 4px;
     /* margin: 0 15px; */
@@ -117,7 +119,7 @@ body{
 .about-inner-box{
     display: flex;
     flex-direction: column;
-    background-color: var(--opWhite);
+    background-color: rgb(183, 183, 183);
     padding: 10px;
     border-radius: 4px;
     margin: 5px 15px;
