@@ -1,10 +1,10 @@
 @font-face {
-font-family: 'Xonica Mans';
-src: url("comic-sans.ttf");
+font-family: 'xonica';
+src: url("xonica-mons.ttf");
 }
 body{
     text-align: center;
-    font-family: "Xonica Mans",  cursive;
+    font-family: xonica;
 }
 
 video{
