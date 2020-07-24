@@ -5,14 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="João Victor Lomazzi">
         <title>Hoje é sexta?</title>
+        
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <h1 id="corpo">{{info principal}}</h1>
-        <p id="corpo2"></p>
+        <div class="container">
+            <div class="container-in">
+                <span id="corpo" class="">{{info principal}}</span>
+                <span id="corpo2" class=""></span>
+                <div>
+                    <button id="play" class="learn-more">Clique aqui para sextar! <br> <span style="font-size: 10px;">(tacar sem compromisso)</span></button>
+                </div>
+            </div>
+            <video id="bg" class="fs" src="bg/mc_poze_anos_80.mp4" loop type="video/mp4"></video>
+        </div>
         <style>
-            body{
-                text-align: center;
-            }
+
         </style>
         <script>
             var diaSemana = [
@@ -28,18 +36,25 @@
             dia = data.getDay();
             
             if(diaSemana[dia] == 'Sexta'){
-                titulo = 'Hoje é sexta? SIM!';
-                corpo = 'HOJE É SEXTA FEIRAAAAAAAAAAAAA';
-                corpo2 = 'SEXTOOOOOOOOOOOOOOOOOOOO000O0O0O0O0OO0OUUUUUUUUUUUUUUUUUUU';
+                titulo = 'Hoje é SEXTA!';
+                corpo = '🎉 HOJE É SEXTA FEIRA 🎉';
+                corpo2 = '🍺 🧊 DESCE O GELO PADRINHO 🧊 🍺';
+                document.getElementById('play').style.visibility = 'visible';
             }else{
-                titulo = 'Hoje é sexta? NÃO!';
+                titulo = 'Hoje NÃO é sexta :(';
                 corpo = 'Não, infelizmente hoje é '+diaSemana[dia]+' :(';
                 corpo2 = 'volte aqui outro dia...';
+                document.getElementById('play').style.visibility = 'hidden';
             }
 
             document.title = titulo;
             document.getElementById("corpo").innerHTML = corpo;
             document.getElementById("corpo2").innerHTML = corpo2;
+            document.getElementById('play').onclick = function (){
+                document.getElementById('bg').play();
+                document.getElementById('corpo').className = 'girese';
+                document.getElementById('corpo2').className = 'girese';
+            };
         </script>
     </body>
 </html>
