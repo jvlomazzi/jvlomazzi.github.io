@@ -5,6 +5,7 @@ src: url("xonica-mons.ttf");
 body{
     text-align: center;
     font-family: xonica;
+    background-color: black;
 }
 
 video{
