@@ -57,8 +57,14 @@
                 document.getElementById('bg').play();
                 document.getElementById('corpo').className = 'girese';
                 document.getElementById('corpo2').className = 'girese';
+                if(random == 0 || random == 1){
+                    document.getElementById('creditos').innerHTML = "Obra-prima por <a href='https://www.youtube.com/channel/UC-xrCciJr8tw4Q3D1JKcRsw' target='_blank' rel='noopener noreferrer'>PMM</a>";
+                }
                 this.style.display = 'none'
             };
         </script>
+        <div class="bottom-txt">
+            <span id="creditos"></span>
+        </div>
     </body>
 </html>
