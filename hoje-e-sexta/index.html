@@ -46,12 +46,14 @@
                 corpo2 = 'volte aqui outro dia...';
                 document.getElementById('play').style.visibility = 'hidden';
             }
+            var videos = ['mc_poze_anos_80.mp4', 'puxando_lanca.mp4'];
+            var random = Math.floor(Math.random() * videos.length);
 
             document.title = titulo;
             document.getElementById("corpo").innerHTML = corpo;
             document.getElementById("corpo2").innerHTML = corpo2;
             document.getElementById('play').onclick = function (){
-                document.getElementById('bg').src = 'bg/mc_poze_anos_80.mp4';
+                document.getElementById('bg').src = 'bg/'+ videos[random];
                 document.getElementById('bg').play();
                 document.getElementById('corpo').className = 'girese';
                 document.getElementById('corpo2').className = 'girese';
