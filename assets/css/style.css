@@ -21,7 +21,8 @@ body{
     display: flex;
     width: 42px;
     height: 23px;
-    background-color: var(--opWhite);
+    background-color: var(--opGrey);
+    border: 1px solid #E0DEDA;
     border-radius: 10px;
 }
 .slider-button input[type="checkbox"]{
@@ -51,7 +52,7 @@ body{
     position: relative;
     cursor: pointer;
     background-color: #FFFFFF;
-    color: cornflowerblue;
+    /* color: cornflowerblue; */
     width: 20px;
     margin: 2px 0;
     border-radius: 50%;
@@ -96,7 +97,7 @@ body{
 .about-area{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 50%;
     margin: 30px auto;
     color: VAR(--txtPrimary);
 }
@@ -145,6 +146,11 @@ body{
 }
 .social-icons:hover{
     opacity: 0.5;
+}
+.project-list{
+    width: 50%;
+    margin: 30px auto;
+    columns: 2;
 }
 .project-img{
     width: 128px;
