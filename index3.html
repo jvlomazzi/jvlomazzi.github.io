@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goiás Tecnologia</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
+
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Muli', sans-serif;
+            margin: unset;
+        }
+        header{
+            width: 100%;
+            border-bottom: solid 1px rgba(0, 0, 0, 00.1);
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+            -webkit-box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+            -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .header-fixed {
+            background-color: #fff;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            -webkit-transition: 0.7s ease;
+            -moz-transition: 0.7s ease;
+            -ms-transition: 0.7s ease;
+            -o-transition: 0.7s ease;
+            transition: 0.7s ease;
+        }
+        .header-logo{
+            margin: 10px auto;
+            /* margin: 10px 10px; */
+            width: fit-content;
+            -webkit-transition: 0.3s ease;
+            -moz-transition: 0.3s ease;
+            -ms-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
+        .header-logo img{
+            height: 90px;
+        }
+        .header-logo span{
+            display: block;
+        }
+        .header-logo:hover{
+            opacity: 0.9;
+        }
+        .header-menu{
+            /* width: fit-content; */
+            width: 45%;
+            align-self: center;
+            text-align: center;
+        }
+        .header-menu ul{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            padding: unset;
+        }
+        .header-menu a{
+            text-transform: uppercase;
+        }
+        a{
+            color: rgb(0, 0, 0);
+            margin: 0 10px;
+            -webkit-transition: 0.3s ease;
+            -moz-transition: 0.3s ease;
+            -ms-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+        a:hover{
+            color: rgb(0, 149, 25);
+        }
+        .menu-left ul{
+            float: right;
+        }
+        .menu-right ul{
+            float: left;
+        }
+
+    </style>
+    <header>
+        <div class="header-menu menu-left">
+            <ul>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><li href="#">Institucional</li></a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><li>Agenda de Autoridades</li></a>
+            </ul>
+        </div>
+        <div class="header-logo">
+            <a href="http://" target="_blank" rel="noopener noreferrer"><img class="" src="assets/img/gt/logo-emblema-alt2.png" alt="Logo Goiás Tecnologia"></a>
+            <!-- <span>Goiás Tecnologia</span> -->
+        </div>
+        <div class="header-menu menu-right">
+            <ul>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><li>Notícias</li></a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><li>Contato</li></a>
+            </ul>
+        </div>
+    </header>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+                <img src="assets/img/gt/carrosel1.jpg" alt="carrosel1">
+        </div>
+        <div class="item"><img src="assets/img/gt/carrosel2.jpg" alt="carrosel2"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $(window).on('scroll', function() {
+            //header fixed animation and control
+            if($(window).scrollTop() > 100) {
+                $('header').addClass('header-fixed');
+            }else{
+                $('header').removeClass('header-fixed');
+            }
+
+            //back to top button control
+            if ($(window).scrollTop() > 300) {
+                $('#back-to-top').addClass('back-btn-shown');
+            } else {
+                $('#back-to-top').removeClass('back-btn-shown');
+            }
+
+        });
+
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });
+    </script>
+</body>
+</html>
