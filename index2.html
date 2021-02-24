@@ -11,9 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <div class="container container-header">
+            <div class="container-header-logo">
+                <em class="fa fa-terminal header-logo-icon"></em> <span>JOÃO <strong>MATOS</strong></span>
+            </div>
+            <div class="container-header-icons">
+                <a href="" class="social-icon fa fa-envelope"></a>
+                <a href="" class="social-icon fab fa-github"></a>
+                <a href="" class="social-icon fab fa-codepen"></a>
+                <a href="" class="social-icon fab fa-linkedin"></a>
+            </div>
+            <div>
+                <a href="" class="menu-icon fa fa-bars"></a>
+            </div>
+        </div>
+    </header>
     <style>
         html {
             height: 100%;
@@ -22,13 +39,87 @@
         body {
             font-family: 'Muli', sans-serif;
             text-align: center;
-            background-image: linear-gradient(-90deg, rgb(35, 62, 169), rgb(133, 60, 105));
+            background-color: rgb(248, 249, 250);
+            /* background-image: linear-gradient(-90deg, rgb(62 63 68), rgb(38 38 41)); */
+            /* background-image: linear-gradient(-90deg, rgb(35, 62, 169), rgb(133, 60, 105)); */
             height: 100%;
             margin: unset;
-            color: #ffffff;
+            color: rgb(73, 80, 87);
 
             /* NIGHT MODE */
             /* background-image: linear-gradient(-90deg, rgb(71, 71, 71), rgb(43, 43, 43)); */
+        }
+
+        header{
+            font-family: 'Poiret One', cursive;
+            padding: 10px;
+            /* background-image: linear-gradient(-90deg, rgb(103, 58, 183), rgb(133, 60, 105)); */
+        }
+        .header-fixed {
+            visibility: visible;
+            background-color: #fff;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            /* width: 100%; */
+            z-index: 999;
+            -webkit-transition: 0.7s ease;
+            -moz-transition: 0.7s ease;
+            -ms-transition: 0.7s ease;
+            -o-transition: 0.7s ease;
+            transition: 0.7s ease;
+            border-bottom: 1px solid rgb(255 255 255 / .3);
+        }
+        .container-header{
+            display: flex;
+            flex-direction: row;
+            background-color: unset!important;
+            border-radius: unset!important;
+            padding: 20px 0 20px 0!important;
+            width: 64%!important;
+        }
+        .container-header div{
+            width: fit-content;
+        }
+        .container-header-logo{
+            font-size: 22px;
+        }
+        .container-header-icons{
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        .header-logo-icon{
+            font-size: 25px;
+            font-weight: 100;
+            margin-right: 10px;
+        }
+        .social-icon{
+            padding: 3px;
+            font-size: 22px;
+            opacity: 0.8;
+            /* color: rgba(255, 255, 255, 0.8); */
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            cursor: pointer;
+            /* border-radius: 4px; */
+            transition: .3s ease;
+        }
+        .social-icon:hover{
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+
+        .menu-icon{
+            padding: 3px;
+            font-size: 25px;
+            color: rgb(255, 255, 255 / 0.8);
+            cursor: pointer;
+            transition: .3s ease;
+            margin-left: 30px;
+        }
+        .menu-icon:hover{
+            opacity: 1;
+            transform: scale(1.2);
         }
 
         .topic {
@@ -99,7 +190,7 @@
         .container {
             width: 60%;
             margin: auto;
-            background-color: rgba(236, 239, 246, .2);
+            background-color: rgb(144 144 144 / 10%);
             padding: 30px;
             border-radius: 8px;
         }
@@ -276,7 +367,7 @@
     </style>
     <div class="name">
         <div class="name-text">
-            <!--<img src="assets/img/notebook.png" alt="Mini logo">--><span> JOÃO <strong>MATOS</strong></span>
+            <!-- <img src="assets/img/notebook.png" alt="Mini logo"><span> JOÃO <strong>MATOS</strong></span> -->
         </div>
     </div>
     <!-- <hr class="separator"> -->
@@ -452,6 +543,26 @@
         </ul>
     </div>
     <!-- END TIMELINE -->
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/all.min.js"></script>
+
+    <script>
+            $(window).on('scroll', function () {
+            //header fixed animation and control
+            if ($(window).scrollTop() > 100) {
+                $('header').addClass('header-fixed');
+            } else {
+                $('header').removeClass('header-fixed');
+            }
+            //     //back to top button control
+            //     if ($(window).scrollTop() > 300) {
+            //         $('#back-to-top').addClass('back-btn-shown');
+            //     } else {
+            //         $('#back-to-top').removeClass('back-btn-shown');
+            //     }
+        });
+    </script>
 </body>
 <footer>
     <p>&copy; João Victor Lomazzi</p>
