@@ -35,7 +35,7 @@
             var data = new Date();
             dia = data.getDay();
             
-            if(diaSemana[dia] == 'Sexta'){
+            if(diaSemana[dia] == 'Quinta'){
                 titulo = 'Hoje é SEXTA!';
                 corpo = '🎉 HOJE É SEXTA FEIRA 🎉';
                 corpo2 = '🍺 🧊 DESCE O GELO PADRINHO 🧊 🍺';
@@ -46,7 +46,7 @@
                 corpo2 = 'volte aqui outro dia...';
                 document.getElementById('play').style.visibility = 'hidden';
             }
-            var videos = [/* 'mc_poze_anos_80.mp4','mc_poze_anos_80_2.mp4', 'puxando_lanca.mp4', */ 'amigo_fura_olho.mp4'];
+            var videos = [/* 'mc_poze_anos_80_2.mp4','puxando_lanca.mp4', 'amigo_fura_olho.mp4' , */ 'mc_poze_anos_80.mp4'];
             var random = Math.floor(Math.random() * videos.length);
 
             document.title = titulo;
