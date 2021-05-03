@@ -12,26 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
     <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div class="container container-header">
-            <div class="container-header-logo">
-                <em class="fa fa-terminal header-logo-icon"></em> <span>JOÃO <strong>MATOS</strong></span>
-            </div>
-            <div class="container-header-icons">
-                <a href="" class="social-icon fa fa-envelope"></a>
-                <a href="" class="social-icon fab fa-github"></a>
-                <a href="" class="social-icon fab fa-codepen"></a>
-                <a href="" class="social-icon fab fa-linkedin"></a>
-            </div>
-            <div>
-                <a href="" class="menu-icon fa fa-bars"></a>
-            </div>
-        </div>
-    </header>
     <style>
+        :root{
+            --primary: #222831;
+            --secondary: #ECECEC;
+            --alternative: #e43f5b;
+            --alternative-p: rgb(45, 51, 59);
+        }
         html {
             height: 100%;
         }
@@ -39,51 +30,35 @@
         body {
             font-family: 'Muli', sans-serif;
             text-align: center;
-            background-color: rgb(248, 249, 250);
-            /* background-image: linear-gradient(-90deg, rgb(62 63 68), rgb(38 38 41)); */
-            /* background-image: linear-gradient(-90deg, rgb(35, 62, 169), rgb(133, 60, 105)); */
-            height: 100%;
-            margin: unset;
-            color: rgb(73, 80, 87);
-
-            /* NIGHT MODE */
-            /* background-image: linear-gradient(-90deg, rgb(71, 71, 71), rgb(43, 43, 43)); */
+            background-color: var(--primary);
+            color: var(--secondary);
         }
 
         header{
             font-family: 'Poiret One', cursive;
             padding: 10px;
-            /* background-image: linear-gradient(-90deg, rgb(103, 58, 183), rgb(133, 60, 105)); */
         }
         .header-fixed {
             visibility: visible;
-            background-color: #fff;
+            background-color: var(--primary);
             left: 0;
             position: fixed;
             right: 0;
             top: 0;
-            /* width: 100%; */
             z-index: 999;
             -webkit-transition: 0.7s ease;
             -moz-transition: 0.7s ease;
             -ms-transition: 0.7s ease;
             -o-transition: 0.7s ease;
             transition: 0.7s ease;
-            border-bottom: 1px solid rgb(255 255 255 / .3);
-        }
-        .container-header{
-            display: flex;
-            flex-direction: row;
-            background-color: unset!important;
-            border-radius: unset!important;
-            padding: 20px 0 20px 0!important;
-            width: 64%!important;
-        }
-        .container-header div{
-            width: fit-content;
+            border-bottom: 1px solid rgb(45 51 59 / .3);
         }
         .container-header-logo{
-            font-size: 22px;
+            font-size: 25px;
+            color: var(--alternative);
+        }
+        .container-header-logo span{
+            color: var(--secondary);
         }
         .container-header-icons{
             margin-left: auto;
@@ -94,14 +69,14 @@
             font-weight: 100;
             margin-right: 10px;
         }
+        
+        .container-social-icon{
+            font-size: 25px;
+        }
         .social-icon{
-            padding: 3px;
-            font-size: 22px;
+            margin: 0 6px;
             opacity: 0.8;
-            /* color: rgba(255, 255, 255, 0.8); */
-            /* background-color: rgba(255, 255, 255, 0.8); */
             cursor: pointer;
-            /* border-radius: 4px; */
             transition: .3s ease;
         }
         .social-icon:hover{
@@ -110,9 +85,9 @@
         }
 
         .menu-icon{
-            padding: 3px;
+            /* padding: 3px; */
             font-size: 25px;
-            color: rgb(255, 255, 255 / 0.8);
+            color: var(--alternative);
             cursor: pointer;
             transition: .3s ease;
             margin-left: 30px;
@@ -122,44 +97,23 @@
             transform: scale(1.2);
         }
 
+        /* h3{
+            font-weight: 100!important;
+        } */
         .topic {
-            font-size: 30px;
+            font-size: 35px;
             font-family: 'Jost', sans-serif !important;
+            text-align: left;
         }
-
+        .topic-center{
+            width: fit-content;
+            margin: auto;
+        }
         .profile-picture {
-            width: 10%;
+            /* width: 10%;
             border-radius: 50%;
-            margin: 50px 0;
-        }
-
-        .name {
-            font-family: 'Poiret One', cursive;
-            font-size: 70px;
-            margin: 50px 0px;
-
-        }
-
-        .name img {
-            width: 7%;
-            margin: -25px 0;
-        }
-
-        .name-text {
-            letter-spacing: 30px;
-
-        }
-
-        .name-text strong {
-            /* animation: pulse infinite;
-            animation-duration: 7s;
-            -webkit-animation: pulse infinite;
-            -webkit-animation-duration: 7s; */
-            /* color: rgb(133, 60, 105); */
-        }
-
-        .occupation-text {
-            font-weight: 600;
+            margin: 50px 0; */
+            width: inherit;
         }
 
         .separator {
@@ -188,31 +142,113 @@
         }
 
         .container {
-            width: 60%;
+            /* width: 60%; */
             margin: auto;
-            background-color: rgb(144 144 144 / 10%);
-            padding: 30px;
+            /* padding: 30px; */
             border-radius: 8px;
+            display: flex;
+            flex-direction: column;
         }
 
         .container p {
             line-height: 25px;
             text-align: justify;
         }
+        .section-full{
+            height: 1000px;
+            /* height: -moz-available;
+            height: -webkit-fill-available;
+            height: fill-available; */
+        }
+        .section-alt{
+            width: 100%;
+            width: -moz-available;
+            width: -webkit-fill-available;
+            width: fill-available;
+            background-color: rgb(144 144 144 / 10%);
+        }
+
+        .container-about{
+            background-color: unset!important;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container-about img{
+            width: 370px;
+            padding: 0;
+            margin: 0 50px 0 0;
+            /* height: min-content; */
+        }
+        .about-text{
+            font-size: 22px;
+            font-family: 'Jost', sans-serif !important;
+            line-height: 50px!important;
+            font-weight: bolder;
+        }
+        .about-icons{
+            /* text-align: right; */
+        }
+        .about-icons .social-icon{
+            font-size: 40px;
+            margin-left: 40px;
+            color: var(--alternative);
+            opacity: 1;
+        }
 
         .container-skills {
             background-color: unset;
-            text-align: justify;
+            /* height: 550px; */
+            /* flex-direction: row!important; */
+            /* text-align: justify; */
         }
 
         .container-skills-icons {
             margin: unset;
+        }
+        .dev-text{
+            text-align: justify;
+            height: fit-content;
+        }
+        .mobile-dev-text{
+            margin: auto 0;
+        }
+        .desktop-dev-text{
+            margin: auto;
+        }
+        .mockups{
+            background: url('assets/img/phone_mockup.png') center center/contain no-repeat;
+            /* position: absolute; */
+            /* margin: 50px 30px; */
+            height: 480px;
+        }
+        .mockups-phone{
+            width: 285px;
+            background: url('assets/img/phone_mockup.png') center center/contain no-repeat;
+            /* right: 330px; */
+        }
+        .mockups-notebook{
+            background: url('assets/img/notebook_mockup.png') center center/cover no-repeat;
+            width: 480px;
+            /* left: 330px; */
+        }
+        .mockups-phone div{
+            margin: 50px 5px;
+        }
+        .mockups-notebook div{    
+            margin: 130px 5px;
         }
 
         .skills-icon {
             height: 40px;
             margin: 0 5px
         }
+
+        /* BEGIN PROJECTS */
+        .carousel-indicators{
+            position: unset!important;
+        }
+        /* END PROJECTS */
 
         /* BEGIN TIMELINE */
         .timeline {
@@ -227,7 +263,7 @@
             position: absolute;
             content: " ";
             width: 3px;
-            background-color: #eeeeee;
+            background-color: var(--alternative-p);
             left: 50%;
             margin-left: -1.5px;
         }
@@ -260,7 +296,7 @@
         .timeline>li>.timeline-panel {
             width: 46%;
             float: left;
-            border: 1px solid #d4d4d4;
+            border: 1px solid var(--alternative-p);
             border-radius: 2px;
             padding: 20px;
             position: relative;
@@ -274,8 +310,8 @@
             right: -15px;
             display: inline-block;
             border-top: 15px solid transparent;
-            border-left: 15px solid #ccc;
-            border-right: 0 solid #ccc;
+            border-left: 15px solid var(--alternative-p);
+            border-right: 0 solid var(--alternative-p);
             border-bottom: 15px solid transparent;
             content: " ";
         }
@@ -286,14 +322,14 @@
             right: -14px;
             display: inline-block;
             border-top: 14px solid transparent;
-            border-left: 14px solid #fff;
-            border-right: 0 solid #fff;
+            border-left: 14px solid var(--alternative-p);
+            border-right: 0 solid var(--alternative-p);
             border-bottom: 14px solid transparent;
             content: " ";
         }
 
         .timeline>li>.timeline-badge {
-            color: #fff;
+            color: var(--alternative-p);
             width: 50px;
             height: 50px;
             line-height: 50px;
@@ -364,50 +400,201 @@
         }
 
         /* END TIMELINE */
+
+        /* BEGIN RESPONSIVE AREA */
+        @media only screen and (max-width: 768px) {
+            .mockups-notebook{
+                width: inherit;
+            }
+        }
+        /* END RESPONSIVE AREA */
+
     </style>
-    <div class="name">
-        <div class="name-text">
-            <!-- <img src="assets/img/notebook.png" alt="Mini logo"><span> JOÃO <strong>MATOS</strong></span> -->
+    <header>
+        <div class="container">
+            <div class="row clearfix">
+                <!-- <div class="col-md-12"> -->
+                    <div class="col-md-6 container-header-logo">
+                        <div class="float-start">
+                            <em class="fa fa-terminal header-logo-icon"></em> <span>JOÃO <strong>MATOS</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 container-social-icon">
+                        <div class="float-end">
+                            <a href="" class="social-icon fa fa-home"></a>
+                            <a href="" class="social-icon fa fa-award"></a>
+                            <a href="" class="social-icon fa fa-user-tie"></a>
+                            <a href="" class="social-icon fa fa-file-code"></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-1">
+                        <a href="" class="menu-icon fa fa-bars"></a>
+                    </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </header>
+    <!-- <section class="section-full"> -->
+    <div class="container">
+        <div class="row">
+            <!-- <div class="container-about"> -->
+                <div class="col-md-5">
+                    <img class="profile-picture" src="assets/img/profile2.png" alt="Profile Picture">
+                </div>
+                <div class="col-md-7">
+                    <h3 class="topic">SOBRE <strong>MIM</strong></h3>
+                    <p class="justify about-text">Eu sou um desenvolvedor Full Stack, responsividade, manutenção em diversos portais. Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
+                </div>
+            <!-- </div> -->
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-icons">
+                    <a href="" class="social-icon fa fa-envelope"></a>
+                    <a href="" class="social-icon fab fa-github"></a>
+                    <a href="" class="social-icon fab fa-codepen"></a>
+                    <a href="" class="social-icon fab fa-linkedin"></a>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- <hr class="separator"> -->
-    <div class="container">
-        <h3 class="topic">SOBRE MIM</h3>
-        <p class="justify">Eu sou um desenvolvedor Full Stack - responsividade - manutenção em diversos portais - Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget erat eros. Praesent nunc ligula, rutrum eget
-            nulla ut, venenatis ultricies sem. Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas. Aliquam erat volutpat. Sed id nunc ac purus vulputate malesuada euismod vel massa.
-            Vivamus ut tempus metus. Ut faucibus, ex nec ornare accumsan, lectus nisi accumsan dolor, ornare convallis
-            lorem diam eget turpis.</p>
-    </div>
-    <hr class="separator">
+    <!-- </section> -->
+
+    <section class="section-alt">
+        <div class="container container-skills">
+            <div class="row">
+                <div class="col-md-6 dev-text mobile-dev-text">
+                    <h3 class="topic">DESENVOLVIMENTO <strong>MOBILE</strong></h3>
+                    <span>Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</span>
+                </div>
+                <div class="col-md-6">
+                    <div class="mockups mockups-phone float-end">
+                        <div>
+                            <img class="skills-icon" src="assets/img/java.png" alt="Java">
+                            <img class="skills-icon" src="assets/img/react.png" alt="react">
+                            <img class="skills-icon" src="assets/img/react.png" alt="react">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section> -->
     <div class="container container-skills">
-        <h3 class="topic">EXPERIÊNCIA</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mockups mockups-notebook float-start">
+                    <div>
+                        <img class="skills-icon" src="assets/img/java.png" alt="Java">
+                        <img class="skills-icon" src="assets/img/php.png" alt="php">
+                        <img class="skills-icon" src="assets/img/nodejs.png" alt="nodejs">
+                        <img class="skills-icon" src="assets/img/bootstrap.png" alt="bootstrap">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 dev-text desktop-dev-text">
+                <h3 class="topic">DESENVOLVIMENTO <strong>DESKTOP</strong></h3>
+                <span>Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</span>
+            </div>
+        </div>
+    </div>
+    <!-- </section> -->
+
+    <section class="section-alt">
+        <div class="container container-skills">
+            <div class="row">
+                <div class="col-md-6 dev-text mobile-dev-text">
+                    <h3 class="topic">DESENVOLVIMENTO <strong>MOBILE</strong></h3>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</span>
+                </div>
+                <div class="col-md-6">
+                    <div class="mockups mockups-phone float-end">
+                        <div>
+                            <img class="skills-icon" src="assets/img/java.png" alt="Java">
+                            <img class="skills-icon" src="assets/img/react.png" alt="react">
+                            <img class="skills-icon" src="assets/img/react.png" alt="react">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- <img class="mockups" src="assets/img/phone_mockup.png" alt="Smartphone">
+        <img class="mockups" src="assets/img/phone_mockup.png" alt="Smartphone">
+        <img class="mockups" src="assets/img/phone_mockup.png" alt="Smartphone"> -->
+        <!-- <h3 class="topic">EXPERIÊNCIA</h3>
         <p class="topic">DESENVOLVIMENTO WEB</p>
-        <!-- <hr class="separator separator-sm"> -->
-        <!-- <div class="container container-skills-icons"> -->
         <img class="skills-icon" src="assets/img/java.png" alt="Java">
         <img class="skills-icon" src="assets/img/php.png" alt="php">
         <img class="skills-icon" src="assets/img/nodejs.png" alt="nodejs">
         <img class="skills-icon" src="assets/img/bootstrap.png" alt="bootstrap">
-        <!-- </div> -->
         <p class="topic">DESENVOLVIMENTO PARA DESKTOP</p>
-        <!-- <hr class="separator separator-sm"> -->
         <img class="skills-icon" src="assets/img/java.png" alt="Java">
         <img class="skills-icon" src="assets/img/python.png" alt="python">
         <img class="skills-icon" src="assets/img/react.png" alt="react">
         <p class="topic">DESENVOLVIMENTO MOBILE/MULTIPLATAFORMA</p>
-        <!-- <hr class="separator separator-sm"> -->
         <img class="skills-icon" src="assets/img/java.png" alt="Java">
         <img class="skills-icon" src="assets/img/react.png" alt="react">
         <p class="topic">BANCO DE DADOS</p>
-        <!-- <hr class="separator separator-sm"> -->
         <img class="skills-icon" src="assets/img/java.png" alt="Java">
         <img class="skills-icon" src="assets/img/react.png" alt="react">
         <p class="topic">OUTROS</p>
-        <!-- <hr class="separator separator-sm"> -->
-        <img class="skills-icon" src="assets/img/photoshop.png" alt="photoshop">
-    </div>
+        <img class="skills-icon" src="assets/img/photoshop.png" alt="photoshop"> -->
+
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="12000">
+                    <!-- <a href="http://" target="_blank" rel="noopener noreferrer" class="d-block w-100 img-carousel" style="background-image: url('assets/img/gt/carrosel1.png');"></a> -->
+                    <div>
+                        <h3 class="topic topic-center">GOIÁS <strong>TECNOLOGIA</strong></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
+                        <a class="btn btn-info" href="http://" target="_blank" rel="noopener noreferrer">Demonstração</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="topic topic-center">GOIÁS <strong>TECNOLOGIA</strong></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
+                        <a class="btn btn-info" href="http://" target="_blank" rel="noopener noreferrer">Demonstração</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div>
+                        <h3 class="topic topic-center">GOIÁS <strong>TECNOLOGIA</strong></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
+                        <a class="btn btn-info" href="http://" target="_blank" rel="noopener noreferrer">Demonstração</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+        </div>
+
+
+    </section>
 
     <!-- BEGIN TIMELINE -->
     <div class="container container-timeline">
@@ -546,21 +733,36 @@
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="js/all.min.js"></script>
-
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+   <script>
             $(window).on('scroll', function () {
-            //header fixed animation and control
+            // header fixed animation and control
             if ($(window).scrollTop() > 100) {
                 $('header').addClass('header-fixed');
             } else {
                 $('header').removeClass('header-fixed');
             }
+
+
             //     //back to top button control
             //     if ($(window).scrollTop() > 300) {
             //         $('#back-to-top').addClass('back-btn-shown');
             //     } else {
             //         $('#back-to-top').removeClass('back-btn-shown');
             //     }
+
+            $('.carousel').swipe( {
+                swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+
+                    if(direction=='left'){
+                        $(this).carousel('next');
+                    }else if(direction=='right'){
+                        $(this).carousel('prev');
+                    }
+
+                }
+            });
         });
     </script>
 </body>
