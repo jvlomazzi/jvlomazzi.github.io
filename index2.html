@@ -100,6 +100,10 @@
         /* h3{
             font-weight: 100!important;
         } */
+        .container-full{
+            min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+            min-height: 100vh;
+        }
         .topic {
             font-size: 35px;
             font-family: 'Jost', sans-serif !important;
@@ -113,7 +117,8 @@
             /* width: 10%;
             border-radius: 50%;
             margin: 50px 0; */
-            width: inherit;
+            /* width: inherit; */
+            height: 340px;
         }
 
         .separator {
@@ -168,18 +173,20 @@
             background-color: rgb(144 144 144 / 10%);
         }
 
-        .container-about{
+        /* .container-about{
             background-color: unset!important;
             display: flex;
             flex-direction: row;
-        }
+            margin-top: auto;
+            margin-bottom: auto;
+        } */
 
-        .container-about img{
+        /* .container-about img{
             width: 370px;
             padding: 0;
             margin: 0 50px 0 0;
-            /* height: min-content; */
-        }
+            /* height: min-content;
+        } */
         .about-text{
             font-size: 22px;
             font-family: 'Jost', sans-serif !important;
@@ -187,7 +194,8 @@
             font-weight: bolder;
         }
         .about-icons{
-            /* text-align: right; */
+            margin-top: auto;
+            margin-bottom: 100px;
         }
         .about-icons .social-icon{
             font-size: 40px;
@@ -400,27 +408,265 @@
         }
 
         /* END TIMELINE */
+        .mobile-nav{
+            display: none;
+        }
 
         /* BEGIN RESPONSIVE AREA */
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 990px) {
+            .profile-picture{
+                height: 267px;
+            }
             .mockups-notebook{
-                width: inherit;
+                width: 100%;
+                background-size: contain;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .full-nav{
+                display: none;
+            }
+            .mobile-nav{
+                display: block;
             }
         }
         /* END RESPONSIVE AREA */
+        .main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #FFF;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .375s;
+}
 
+.main-nav.is-open {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+}
+
+/* Yellow band effect */
+.main-nav::before {
+	 content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -15px;
+    background: #FEDC2A;
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+}
+
+.main-nav.is-open::before {
+    transform: skew(-14deg) translateX(0);
+}
+
+/* Skewing effect on menu links */
+.main-nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 93%; /* Should be 100%, but we have a notice message :D */
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+}
+
+.main-nav li {
+    display: block;
+    margin: .5rem 0;
+    text-align: right;
+    transform: skew(16deg);
+}
+
+/* Apparition effect on links */
+.main-nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.main-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.main-nav li:nth-child(1) a {
+	transition: all 275ms 175ms
+}
+.main-nav li:nth-child(2) a {
+	transition: all 275ms 225ms
+}
+.main-nav li:nth-child(3) a {
+	transition: all 275ms 275ms
+}
+.main-nav li:nth-child(4) a {
+	transition: all 275ms 325ms
+}
+.main-nav li:nth-child(5) a {
+	transition: all 275ms 375ms
+}
+
+
+/* Decoration */
+.main-nav ul,
+.main-nav li {
+	list-style: none;
+	padding: 0;
+}
+.main-nav a {
+	display: block;
+	padding: 12px 0;
+	color: #5A3B5D;
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
+.open-main-nav {
+	position: absolute;
+	top: 15px;
+	padding-top: 20px;
+    right: 63px;
+	z-index: 1000;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+.open-main-nav:focus {
+	outline: none;
+}
+.burger {
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 0 auto;
+	background: #5A3B5D;
+	transform: skew(5deg);
+	transition: all .275s;
+}
+
+.burger:after,
+.burger:before {
+	content: '';
+	display: block;
+	height: 100%;
+	background: #5A3B5D;
+	transition: all .275s;
+}
+
+.burger:after {
+	transform: translateY(-12px) translateX(-2px) skew(-20deg);
+}
+
+.burger:before {
+	transform: translateY(-16px) skew(-10deg);
+}
+
+/* Toggle State part */
+.is-open .burger {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.is-open .burger:before {
+	transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.is-open .burger:after {
+	transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
+}
+
+/* MENU Text part */
+
+.burger-text {
+	display: block;
+	font-size: .675rem;
+	letter-spacing: .05em;
+	margin-top: .5em;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	color: #5A3B5D;
+}
+
+/* .device {
+	position: relative;
+	width: 345px;
+	height: 600px;
+	background: #FFF;
+	border: 1px solid #EEE;
+	border-radius: 3px;
+	box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+} */
+
+
+/* Notice */
+.notice {
+	position: absolute;
+	bottom: -15px;
+	left: 0; right: 0;
+	padding: 20px;
+	background: #F2F2F2;
+	color: #5A3B5D;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	z-index: 100;
+	text-align: center;
+}
+.notice strong {
+	font-weight: 700;
+}
+.notice a {
+	padding: 2px 3px;
+	background: #FEDC2A;
+	text-decoration: none;
+}
     </style>
     <header>
         <div class="container">
-            <div class="row clearfix">
+            <div class="row">
                 <!-- <div class="col-md-12"> -->
                     <div class="col-md-6 container-header-logo">
                         <div class="float-start">
                             <em class="fa fa-terminal header-logo-icon"></em> <span>JOÃO <strong>MATOS</strong></span>
                         </div>
+                        <div class="float-end mobile-nav">
+                            <button id="burger" class="open-main-nav">
+                                <span class="burger"></span>
+                                <!-- <span class="burger-text">Menu</span> -->
+                            </button>
+                            <nav class="main-nav" id="main-nav">
+                                <ul>
+                                    <li>
+                                        <a href="#">About me</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Speaker &amp; Writer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Work</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                     <div class="col-md-6 container-social-icon">
-                        <div class="float-end">
+                        <div class="float-end full-nav">
                             <a href="" class="social-icon fa fa-home"></a>
                             <a href="" class="social-icon fa fa-award"></a>
                             <a href="" class="social-icon fa fa-user-tie"></a>
@@ -435,22 +681,22 @@
         </div>
     </header>
     <!-- <section class="section-full"> -->
-    <div class="container">
-        <div class="row">
+    <div class="container container-full">
+        <div class="row my-auto">
             <!-- <div class="container-about"> -->
                 <div class="col-md-5">
                     <img class="profile-picture" src="assets/img/profile2.png" alt="Profile Picture">
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 my-auto">
                     <h3 class="topic">SOBRE <strong>MIM</strong></h3>
                     <p class="justify about-text">Eu sou um desenvolvedor Full Stack, responsividade, manutenção em diversos portais. Lorem
                         ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
                 </div>
             <!-- </div> -->
         </div>
-        <div class="row">
+        <div class="row about-icons">
             <div class="col-md-12">
-                <div class="about-icons">
+                <div class="">
                     <a href="" class="social-icon fa fa-envelope"></a>
                     <a href="" class="social-icon fab fa-github"></a>
                     <a href="" class="social-icon fab fa-codepen"></a>
@@ -546,11 +792,11 @@
         <img class="skills-icon" src="assets/img/photoshop.png" alt="photoshop"> -->
 
     <section>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselProjects" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="12000">
                     <!-- <a href="http://" target="_blank" rel="noopener noreferrer" class="d-block w-100 img-carousel" style="background-image: url('assets/img/gt/carrosel1.png');"></a> -->
-                    <div>
+                    <div data-site="goias_tecnologia">
                         <h3 class="topic topic-center">GOIÁS <strong>TECNOLOGIA</strong></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Nunc eget erat eros praesent nunc ligula.</p>
                         <a class="btn btn-info" href="http://" target="_blank" rel="noopener noreferrer">Demonstração</a>
@@ -764,6 +1010,34 @@
                 }
             });
         });
+
+
+
+        let burger = document.getElementById('burger'),
+	 nav    = document.getElementById('main-nav');
+
+burger.addEventListener('click', function(e){
+	this.classList.toggle('is-open');
+	nav.classList.toggle('is-open');
+});
+
+// slowmo.addEventListener('click', function(e){
+// 	this.classList.toggle('is-slowmo');
+// });
+
+/* Onload demo - dirty timeout */
+let clickEvent = new Event('click');
+
+window.addEventListener('load', function(e) {
+	burger.dispatchEvent(clickEvent);
+	
+	setTimeout(function(){
+		burger.dispatchEvent(clickEvent);
+	}, 5500);
+});
+    $("#carouselProjects").on('slide.bs.carousel', function(e){
+        // console.log($(e).children(".carousel-item .active"));
+    });
     </script>
 </body>
 <footer>
