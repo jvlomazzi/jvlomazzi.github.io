@@ -1,0 +1,207 @@
+:root{
+    --opWhite: rgba(255, 255, 255, 0.3);
+    --opGrey: rgb(242, 242, 242);
+    --txtPrimary: rgb(57, 60, 68);
+}
+body{
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    /* background: linear-gradient(80deg, rgba(152,79,6,1) 0%, rgba(106,20,128,1) 46%, rgba(10,194,243,1) 93%); */
+    color: var(--txtPrimary);
+}
+.switcher-container{
+    display: flex!important;
+    width: fit-content;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: 10px auto 10px auto;
+}
+.slider-button{
+    display: flex;
+    width: 42px;
+    height: 23px;
+    background-color: var(--opGrey);
+    border: 1px solid #E0DEDA;
+    border-radius: 10px;
+}
+.slider-button input[type="checkbox"]{
+    visibility: hidden;
+    width: 0;
+    margin: 0 0 0 2px;
+}
+.slider-button input[type="checkbox"]:checked + label{
+    right: -18px;
+    animation: switcherChecked;
+    animation-duration: .5s;
+    -webkit-animation: switcherChecked;
+    -webkit-animation-duration: .5s;
+}
+
+.slider-button input[type="checkbox"]:not(:checked) + label{
+    right: 0;
+    animation: switcherNotChecked;
+    animation-duration: .5s;
+    -webkit-animation: switcherNotChecked;
+    -webkit-animation-duration: .5s;
+}
+.circle-switcher:before{
+    color: cornflowerblue;
+}
+.circle-switcher{ 
+    position: relative;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    /* color: cornflowerblue; */
+    width: 20px;
+    margin: 2px 0;
+    border-radius: 50%;
+    float: left;
+}
+@keyframes switcherChecked{
+    from{ right: 0 }
+    to{ right: -19px }
+}
+@keyframes switcherNotChecked{
+    from{ right: -19px }
+    to{ right: 0 }
+}
+.responsive-img{
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+#profile_picture{
+    width: 15em;
+    border-radius: 50%;
+    border: 6px solid;
+    animation: pulse infinite;
+    animation-duration: 7s;
+    -webkit-animation: pulse infinite;
+    -webkit-animation-duration: 7s;
+}
+@keyframes pulse{
+    0%{
+        border-color: red;
+    }
+    50%{
+        border-color: yellow;
+    }
+    100%{
+        border-color: red;
+    } 
+}
+.about-area{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 30px auto;
+    color: VAR(--txtPrimary);
+}
+.about-arrow{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 22.5px 30px 22.5px;
+    margin: 0 auto;
+    border-color:  transparent transparent var(--opGrey) transparent;
+}
+.about-text-box{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--opGrey);
+    padding: 10px;
+    border-radius: 4px;
+    /* margin: 0 15px; */
+}
+.about-inner-box{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(183, 183, 183);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 5px 15px;
+}
+.about-title{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 15px;
+}
+.about-text{
+    margin: 0 15px 10px 15px;
+    text-align: justify;
+}
+.social-icons{
+    padding: 7px;
+    font-size: 30px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s ease;
+}
+.social-icons:hover{
+    opacity: 0.5;
+}
+.project-list{
+    width: 50%;
+    margin: 30px auto;
+    columns: 2;
+}
+.project-img{
+    width: 128px;
+    height: 128px;
+    margin-right: 12px;
+}
+.project-card{
+    display: flex;
+    margin: 10px 0;
+    /* border: 1px solid black; */
+}
+.project-card a{
+    float: right;
+}
+.project-type{
+    color: rebeccapurple;
+}
+.project-name{
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+.project-version{
+    font-weight: 200;
+    font-size: 13px;
+    color: grey;
+}
+.project-description{
+    color: grey;
+    text-align: left
+}
+
+
+/**************************************************
+RESPONSIVE AREA
+**************************************************/
+@media (max-width: 1024px){
+    .about-area{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px){
+    .about-area{
+        width: 90%
+    }
+}
+
+@media (max-width: 480px){
+    .about-area{
+        width: 100%
+    }
+}
